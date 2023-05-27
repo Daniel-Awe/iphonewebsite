@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>手机详情页</title>
+    <meta name="description" content="123" />
+    <meta name="Keywords" content="手机" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/detail-common.css">
+    <link rel="stylesheet" href="./css/detail.css">
+    <link rel="stylesheet" href="./lib/iconfont/iconfont.css">
+    <script src="./lib/js/detail.js"></script>
+    <script src="./lib/js/jQuery.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector("header"); 
+            header.classList.toggle("sticky", window.scrollY > 0 )
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 顶部导航 开始 -->
+    <div id="headerTop">
+        <header class = "main">
+        <div class="cool l">
+            <a href="./index.html"><p>Cool</p></a>
+        </div>      
+        <div class="ulList">
+            <ul class="upul">
+                <!-- 第一个li 首页-->
+                <li><a href="./index.html">首页</a></li>
+                <!-- 第二个li 手机鼠标浮动显示-->
+                <li class="jQiphone">
+                    <a href="./iphone.html">手机</a>
+                </li>
+                <!-- 第三个li 穿戴-->
+                <li><a href="./wear.html">穿戴</a>
+                
+                </li>
+                <!-- 第四个li 服务-->
+                <li><a href="./service.html">服务</a></li>
+                <!-- 第五个li APP下载鼠标浮动显示-->
+                <li class="jQcode">
+                    <a href="#">APP下载</a>
+                <img src="./upload/qrcode.jpg" alt="" class="code">
+                </li>
+                <!-- 第六个li 输入搜索框-->
+                <li> 
+                <form action="">
+                    <input type="text" placeholder="请输入...">
+                    <button type="submit"><span class="iconfont icon-sousuo" width="12px"></span></button>
+                </form>
+                </li>
+                <!-- 第七个li 个人中心-->
+                <li><a href="./enroll.html"><span class="iconfont icon-geren"></span></a></li>    <!-- 个人中心iconfont -->
+                <!-- 第八个li 购物商城-->
+                <li><a href="./detail.html"><span class="iconfont icon-shangcheng"></span></a></span></li>    <!-- 购物车iconfont -->
+            </ul>
+        </div>
+        <!-- 视口宽度小于1100px时显示的效果 开始 -->
+        <!-- 显示的两个图标 开始 -->
+        <div class="lanmu1 share">
+            <a href="./enroll.html"><span class="iconfont icon-geren"></span></a>
+        </div>
+        <div class="lanmu2 share">
+            <a href="#"><span class="iconfont icon-lanmu"></span></a>
+        </div>
+        <!-- 黑色导航栏 开始-->
+        <div class="mulu">
+            <div class="title">
+            <h1>Cool</h1>
+            <div class="icon">
+                <a href="./enroll.html"><span class="iconfont icon-geren fs"></span></a>
+                <a href="#"><span class="iconfont icon-cha cha" ></span></a>
+            </div>
+            </div>
+            <ul>
+            <li><a href="./index.html">首页<span class="iconfont icon-jiantouyou"></span></a></li>
+            <li><a href="./iphone.html">手机<span class="iconfont icon-jiantouyou"></span></a></li>
+            <li><a href="./wear.html">穿戴<span class="iconfont icon-jiantouyou"></span></a></li>
+            <li><a href="./service.html">服务<span class="iconfont icon-jiantouyou"></span></a></li>
+            <li><a href="#">APP下载<span class="iconfont icon-jiantouyou"></span><div class="zp"><img src="./uploads/qrcode.jpg" alt="" class="code-copy"></div></a></li>
+            </ul>
+        </div>
+        <!-- 黑色导航栏结束 -->
+        <!-- 显示的两个图标 结束 -->
+        <!-- 视口宽度小于1100px时显示的效果 结束 -->   
+    </header>
+        <script>
+        $(function(){
+            // 导航“手机”的显示与隐藏
+            $(".jQiphone").mouseover(function(){
+            $(this).children(".outer").css('display', 'block');
+            })
+            $(".jQiphone").mouseout(function(){
+            $(this).children(".outer").css('display', 'none');
+            })
+            // 导航“二维码”的显示与隐藏
+            $(".jQcode").hover(function(){
+            $(this).children(".code").stop().slideToggle("fast");
+            })
+            // 宽度小于1100px时的效果
+            $(".lanmu2").click(function(){
+            $(".mulu").css('display', 'block');
+            })
+            $(".cha").click(function(){
+            $(".mulu").css('display', 'none');
+            })
+        })
+        // 文本无法被选中效果
+        var header = document.querySelector('header');
+            header.addEventListener('selectstart', function(e){
+            e.preventDefault();
+            })
+        </script> 
+    </div>
+    <!-- 导航设计结束 -->
+
+    <!-- 购物车 -->
+    <a href="./shopcart.html">
+        <div class="shopcart">
+            <span class="iconfont icon-shangcheng"></span>
+        </div>
+    </a>
+    <!-- 购物车 -->
+
+    <!-- nav start -->
+    <div class="nav">
+        <div class="w">
+        </div>
+    </div>
+    <div class="ex-box">
+        <div class="title">
+            <h1><font style="font-size: 32px; font-weight: 900; color: #e54346; font-family: 幼圆;">Canaan</font> 酷欧商城</h1>
+            <h2>我的购物车</h2>
+        </div>
+    </div>
+    <!-- nav end -->
+
+    <!-- 详情页内容部分	 -->
+    <div class="de_container w">
+        <!-- 面包屑导航 -->
+        <div class="crumb_wrap" style="line-height: 26px;">
+            <a href="#">手机、数码、通讯</a> 〉 <a href="#">手机   </a> 〉 <a href="#">Cool 酷欧   </a> 〉 <a href="#">Cool14 Pro+系类</a>
+        </div>
+        <!-- 产品介绍模块 -->
+        <div class="product_intro clearfix">
+            <!-- 预览区域 -->
+            <div class="preview_wrap fl">
+                <div class="preview_img">
+                    <img src="./images/iphone/iphone11.png" alt="" width="398px">
+                    <div class="mask"></div>
+                    <div class="big">
+                        <img src="./images/iphone/iphone11.png" alt="" class="bigImg">
+                    </div>
+                </div>
+
+                <div class="preview_list">
+                    <a href="#" class="arrow_prev"></a>
+                    <a href="#" class="arrow_next"></a>
+                    <ul class="list_item">
+                        <li>
+                            <img src="upload/pre.jpg" alt="">
+                        </li>
+                        <li class="current">
+                            <img src="upload/pre.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="upload/pre.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="upload/pre.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="upload/pre.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 产品详细信息 -->
+            <div class="itemInfo_wrap fr">
+                <div class="sku_name" style="font-size: 28px; height: 50px; line-height: 38px; color: black;">
+                    Cool14 Pro+ 
+                </div>
+                <div class="summary">
+                    <dl class="summary_price">
+                        <dt>价格</dt>
+                        <dd>
+                            <i class="price">￥5299.00 </i>
+                            <a href="#">降价通知</a>
+                            <div class="remark">累计评价612188</div>
+                        </dd>
+                    </dl>
+                    <dl class="summary_promotion">
+                        <dt>促销</dt>
+                        <dd>
+                            <em>加购价</em> 满999.00另加20.00元，或满1999.00另加30.00元，或满2999.00另加40.00元，即可在购物车换 购热销商品 详情 》
+                        </dd>
+                    </dl>
+                    <dl class="summary_support">
+                        <dt>支持</dt>
+                        <dd>以旧换新，闲置手机回收 4G套餐超值抢 礼品购</dd>
+                    </dl>
+                    <dl class="choose_color">
+                        <dt>选择颜色</dt>
+                        <dd>
+                            <a href="javascript:;" class="loveyou">玫瑰金</a>
+                            <a href="javascript:;">金色</a>
+                            <a href="javascript:;">白色</a>
+                            <a href="javascript:;">土豪色</a>
+                        </dd>
+                        <script>
+                        </script>
+                    </dl>
+                    <dl class="choose_version">
+                        <dt>选择版本</dt>
+                        <dd>
+                            <a href="javascript:;" class="loveyou">公开版</a>
+                            <a href="javascript:;">移动4G</a>
+                        </dd>
+                        <script>
+                            
+                        </script>
+                    </dl>
+                    <dl class="choose_type">
+                        <dt>购买方式</dt>
+                        <dd>
+                            <a href="javascript:;" class="loveyou">官方标配</a>
+                            <a href="javascript:;">移动优惠购</a>
+                            <a href="javascript:;">电信优惠购</a>
+                        </dd>
+                    </dl>
+                    <div class="choose_btns">
+                        <div class="choose_amount">
+                            <input type="text" value="1">
+                            <a href="javascript:;" class="add">+</a>
+                            <a href="javascript:;" class="reduce">-</a>
+                        </div>
+                        <a href="./shopcart.html" class="addcar">加入购物车</a>
+                    </div>
+                    <!-- 按钮点击 -->
+                    <script>
+                        var asc = document.querySelector('.choose_color').querySelectorAll('a');
+                            for(var i = 0; i < asc.length; i++){
+                                asc[i].onclick = function(){
+                                    for(var j = 0; j < asc.length; j++){
+                                        asc[j].className = '';
+                                    }
+                                    this.className = 'loveyou';
+                                }
+                            }
+                        var asv = document.querySelector('.choose_version').querySelectorAll('a');
+                            for(var i = 0; i < asv.length; i++){
+                                asv[i].onclick = function(){
+                                    for(var j = 0; j < asv.length; j++){
+                                        asv[j].className = '';
+                                    }
+                                    this.className = 'loveyou';
+                                }
+                            }
+                        var ast = document.querySelector('.choose_type').querySelectorAll('a');
+                            for(var i = 0; i < ast.length; i++){
+                                ast[i].onclick = function(){
+                                    for(var j = 0; j < ast.length; j++){
+                                        ast[j].className = '';
+                                    }
+                                    this.className = 'loveyou';
+                                }
+                            }
+                    </script>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 产品细节模块 product_detail	 -->
+        <div class="product_detail clearfix">
+            <!-- aside -->
+            <div class="aside fl">
+                <div class="tab_list">
+                    <ul>
+                        <li class="first_tab ">相关分类</li>
+                        <li class="second_tab current">推荐品牌</li>
+                    </ul>
+                </div>
+                <div class="tab_con">
+
+                    <ul>
+                        <li>
+                            <img src="upload/aside_img.jpg" alt="">
+                            <h5>酷欧 Cool12 Pro 全面屏徕卡</h5>
+                            <div class="aside_price">¥19</div>
+                            <a href="#" class="as_addcar">加入购物车</a>
+                        </li>
+                        <li>
+                            <img src="upload/aside_img.jpg" alt="">
+                            <h5>酷欧 Cool12 Pro 全面屏徕卡</h5>
+                            <div class="aside_price">¥19</div>
+                            <a href="#" class="as_addcar">加入购物车</a>
+                        </li>
+                        <li>
+                            <img src="upload/aside_img.jpg" alt="">
+                            <h5>酷欧 Cool12 Pro 全面屏徕卡</h5>
+                            <div class="aside_price">¥19</div>
+                            <a href="#" class="as_addcar">加入购物车</a>
+                        </li>
+                        <li>
+                            <img src="upload/aside_img.jpg" alt="">
+                            <h5>酷欧 Cool12 Pro 全面屏徕卡</h5>
+                            <div class="aside_price">¥19</div>
+                            <a href="#" class="as_addcar">加入购物车</a>
+                        </li>
+                        <li>
+                            <img src="upload/aside_img.jpg" alt="">
+                            <h5>酷欧 Cool12 Pro 全面屏徕卡</h5>
+                            <div class="aside_price">¥19</div>
+                            <a href="#" class="as_addcar">加入购物车</a>
+                        </li>
+                        <li>
+                            <img src="upload/aside_img.jpg" alt="">
+                            <h5>酷欧 Cool12 Pro 全面屏徕卡</h5>
+                            <div class="aside_price">¥19</div>
+                            <a href="#" class="as_addcar">加入购物车</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <!-- detail -->
+            <div class="detail fr">
+                <div class="detail_tab_list">
+                    <ul>
+                        <li class="current">商品介绍</li>
+                        <li>规格与包装</li>
+                        <li>售后保障</li>
+                        <li>商品评价（999+）</li>
+                    </ul>
+                </div>
+                <div class="detail_tab_con">
+                    <div class="item" style="display: block;">
+                        <ul class="item_info">
+                            <li>分辨率：1920*1080(FHD)</li>
+                            <li>后置摄像头：1200万像素</li>
+                            <li>前置摄像头：500万像素</li>
+                            <li>核 数：其他</li>
+                            <li>频 率：以官网信息为准</li>
+                            <li>品牌： Cool ♥关注</li>
+                            <li>商品名称：COOLiPhone 6s Plus</li>
+                            <li>商品编号：1861098</li>
+                            <li>商品毛重：0.51kg</li>
+                            <li>商品产地：中国大陆</li>
+                            <li>热点：指纹识别，Cool Pay，金属机身，拍照神器</li>
+                            <li>系统：CoolOS</li>
+                            <li>像素：1000-1600万</li>
+                            <li>机身内存：64GB</li>
+                        </ul>   
+                    </div>
+					<div class="item">
+                        <ul class="item_info">
+                            <li>规格：6.4英寸</li>
+                            <li>包装：硬纸质</li>
+                            <li>屏幕刷新率：120Hz</li>
+                            <li>屏幕尺寸：6.67英寸</li>
+                            <li>CPU型号：骁龙778G</li>
+                            <li>机身重量：168g</li>
+                            <li>机身尺寸：宽73.91mm；长162.18mm；厚6.88mm</li>
+                            <li>运行内存：8GB</li>
+                            <li>机身内存：128GB</li>
+                            <li>数据接口：WIFI；OTG接口；蓝牙；NFC
+                            <li>耳机接口：Type-C</li>
+                            <li>后摄主像素：5000万像素
+                            <li>后摄2-超广角像素：800万像素</li>
+                            <li>前摄主像素：6000万像素</li>
+                        </ul>
+                    </div>
+					<div class="item">
+                        <div class="tect">
+                            <h1>厂家服务</h1>
+                            <p>本商品质保周期为1年质保，在此时间范围内可提交维修申请，具体请以厂家服务为准。 如因质量问题或故障，凭厂商维修中心或特约维修点的质量检测证明，享受7日内退货，15日<br>
+                                内换货，15日以上在质保期内享受免费保修等三包服务！ <br>
+                                (注:如厂家在商品介绍中有售后保障的说明,则此商品按照厂家说明执行售后保障服务。) 您可以查询本品牌在各地售后服务中心的联系方式，请点击这儿查询</p>
+                        </div>
+                        <div class="tect">
+                            <h1>欧酷承诺</h1>
+                            <p>欧酷平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务。请您放心购买！<br>
+                                注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正<br>
+                                货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！<br>
+                        </div>
+                        <div class="tect">
+                            <h1>正品行货</h1>
+                            <p>酷欧商城向您保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票</p>
+                        </div>
+                        <div class="tect">
+                            <h1>无忧退货</h1>
+                            <p>客户购买欧酷自营商品7日内（含7日，自客户收到商品之日起计算），在保证商品完好的前提下，可无理由退货。（部分商品除外，详情请见各商品细则）</p>
+                        </div>
+                    </div> 
+                    <div class="item">
+                        <ul class="item_info">
+                            <li>阿*：整体还行，就是屏幕差了点</li>
+                            <li>189****2109：暂时挺好用的，就是电量和流量跑的太快</li>
+                            <li>177****1267：相机拍照部分场景失真，说是187版本可以解决，更新后依然不行。购买请谨慎。</li>
+                            <li>李*：手机外观精美，像素也很高，非常适合爱拍照的我，网速也快，下载软件几秒就好了，打王者、吃鸡非常流畅，一点也不卡。曲面屏用着真的非常舒服，爱了爱了。我是小黑粉，真心好用，支持酷欧Ikun</li>
+                            <li>都*****：非常满意，永远支持酷欧</li>
+                            <li>A**：用户未填写评价内容</li>
+                            <li>五星好评</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="./images/img-detail/detail1.webp" alt="">
+                <img src="./images/img-detail/detail2.webp" alt="">
+                <img src="./images/img-detail/detail3.png" alt="">
+                <script>
+                    var detailist = document.querySelector('.detail_tab_list');
+                    detailist.addEventListener('selectstart',function(e){
+                        e.preventDefault();
+                    })
+                    var items = document.querySelector('.detail_tab_con').querySelectorAll('.item');
+                    var lis = document.querySelector('.detail_tab_list').querySelectorAll('li');
+                    for(var j = 0; j < lis.length; j++){
+                        lis[j].setAttribute('index', j);
+                        lis[j].onclick = function(){
+                            for(var k = 0; k < lis.length; k++){
+                                lis[k].className = '';
+                            }
+                            this.className = 'current';
+                            var index = this.getAttribute('index');
+                            console.log(index);
+                            // 干掉所有人 让其余的item 这些div 隐藏
+                            for (var i = 0; i < items.length; i++) {
+                                items[i].style.display = 'none';
+                            }
+                            // 留下我自己 让对应的item 显示出来
+                            items[index].style.display = 'block';
+                        }
+                    }
+                    
+                </script>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- 详情页内容部分	 -->
+
+    <!-- footer start -->
+    <div class="footer">
+        <div class="w">
+            <!-- mod_service -->
+            <div class="mod_service">
+                <ul>
+                    <li>
+                        <i class="mod-service-icon mod_service_zheng"></i>
+                        <div class="mod_service_tit">
+                            <h5>正品保障</h5>
+                            <p>正品保障，提供发票</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod-service-icon mod_service_kuai"></i>
+                        <div class="mod_service_tit">
+                            <h5>正品保障</h5>
+                            <p>正品保障，提供发票</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod-service-icon mod_service_bao"></i>
+                        <div class="mod_service_tit">
+                            <h5>正品保障</h5>
+                            <p>正品保障，提供发票</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod-service-icon mod_service_bao"></i>
+                        <div class="mod_service_tit">
+                            <h5>正品保障</h5>
+                            <p>正品保障，提供发票</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod-service-icon mod_service_bao"></i>
+                        <div class="mod_service_tit">
+                            <h5>正品保障</h5>
+                            <p>正品保障，提供发票</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- mod_help -->
+            <div class="mod_help">
+                <dl class="mod_help_item">
+                    <dt>购物指南</dt>
+                    <dd> <a href="#">购物流程 </a></dd>
+                    <dd> <a href="#">会员介绍 </a></dd>
+                    <dd> <a href="#">Canaan </a></dd>
+                    <dd> <a href="#">常见问题 </a></dd>
+                    <dd> <a href="#">手机新品 </a></dd>
+                    <dd> <a href="#">联系客服 </a></dd>
+                </dl>
+                <dl class="mod_help_item">
+                    <dt>购物指南</dt>
+                    <dd> <a href="#">购物流程 </a></dd>
+                    <dd> <a href="#">会员介绍 </a></dd>
+                    <dd> <a href="#">Canaan </a></dd>
+                    <dd> <a href="#">常见问题 </a></dd>
+                    <dd> <a href="#">手机新品 </a></dd>
+                    <dd> <a href="#">联系客服 </a></dd>
+                </dl>
+                <dl class="mod_help_item">
+                    <dt>购物指南</dt>
+                    <dd> <a href="#">购物流程 </a></dd>
+                    <dd> <a href="#">会员介绍 </a></dd>
+                    <dd> <a href="#">Canaan </a></dd>
+                    <dd> <a href="#">常见问题 </a></dd>
+                    <dd> <a href="#">手机新品 </a></dd>
+                    <dd> <a href="#">联系客服 </a></dd>
+                </dl>
+                <dl class="mod_help_item">
+                    <dt>购物指南</dt>
+                    <dd> <a href="#">购物流程 </a></dd>
+                    <dd> <a href="#">会员介绍 </a></dd>
+                    <dd> <a href="#">Canaan </a></dd>
+                    <dd> <a href="#">常见问题 </a></dd>
+                    <dd> <a href="#">手机新品 </a></dd>
+                    <dd> <a href="#">联系客服 </a></dd>
+                </dl>
+                <dl class="mod_help_item">
+                    <dt>购物指南</dt>
+                    <dd> <a href="#">购物流程 </a></dd>
+                    <dd> <a href="#">会员介绍 </a></dd>
+                    <dd> <a href="#">Canaan </a></dd>
+                    <dd> <a href="#">常见问题 </a></dd>
+                    <dd> <a href="#">手机新品 </a></dd>
+                    <dd> <a href="#">联系客服 </a></dd>
+                </dl>
+                <dl class="mod_help_item mod_help_app">
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <img src="./upload/qrcode.jpg" alt="">
+                        <p>Canaan客户端</p>
+                    </dd>
+                </dl>
+            </div>
+
+            <!-- mod_copyright  -->
+            <div class="mod_copyright">
+                <p class="mod_copyright_links">
+                    关于我们 | 联系我们 | 联系客服 | 营销中心 | 手机Canaan | 友情链接 | 销售联盟 | Canaan社区 |  English Site | Contact U
+                </p>
+                <p class="mod_copyright_info">
+                    地址：马达加斯加 阿纳拉曼加 伊塔西路372号  电话：400-618-4777 传真：990-82935100 邮箱: madajiasijia.cn <br> 
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- footer end -->
+</body>
+
+</html>

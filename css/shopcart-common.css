@@ -1,0 +1,120 @@
+/*版心*/
+.w {
+  width: 81.46639511vw;
+  margin: 0 auto;
+}
+.style-red {
+  color: #c81623;
+}
+.spacer {
+  width: 1px;
+  height: 0.81466395vw;
+  background-color: #666;
+  margin: 0.61099796vw 0.81466395vw 0;
+}
+.block {
+  width: 100%;
+  height: 80px;
+}
+.ex-box {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 1.69721656vw;
+  box-shadow: 0 0 10px 1px #b3b3b3;
+}
+.ex-box .title {
+  display: flex;
+  justify-content: space-between;
+  width: 79%;
+  height: 70px;
+  margin: 0 auto;
+}
+.ex-box .title h1 {
+  height: 70px;
+  line-height: 70px;
+  font-size: 28px;
+  font-family: 幼圆;
+  color: #000;
+}
+.ex-box .title h2 {
+  height: 70px;
+  line-height: 70px;
+  color: #000;
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: 28px;
+}
+/*footer 部分*/
+.footer {
+  background-color: #f5f5f5;
+  padding-top: 3.39443313vw;
+  background: #fff;
+}
+.mod_service {
+  height: 5.36320434vw;
+  border-bottom: 0.06788866vw solid #ccc;
+}
+.mod_service li {
+  float: left;
+  width: 16.29327902vw;
+  height: 5.36320434vw;
+}
+.mod-service-icon {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin-left: 35px;
+  background: url(../images/img-detail/icons.png) no-repeat;
+}
+.mod_service_zheng {
+  background-position: -253px -3px;
+}
+.mod_service_tit {
+  float: left;
+  margin-left: 0.33944331vw;
+}
+.mod_service_tit h5 {
+  margin: 0.33944331vw 0;
+}
+.mod_service_kuai {
+  background-position: -255px -54px;
+}
+.mod_service_bao {
+  background-position: -257px -105px;
+}
+.mod_help {
+  height: 12.6951799vw;
+  border-bottom: 0.06788866vw solid #ccc;
+}
+.mod_help_item {
+  float: left;
+  width: 13.57773252vw;
+  padding: 1.35777325vw 0 0 3.39443313vw;
+}
+.mod_help_item dt {
+  height: 1.69721656vw;
+  font-size: 1.0862186vw;
+}
+.mod_help_item dd {
+  height: 1.49355058vw;
+}
+.mod_help_item dd img {
+  width: 6.44942295vw;
+}
+.mod_help_app dt,
+.mod_help_app p {
+  padding-left: 1.01832994vw;
+}
+.mod_help_app img {
+  margin: 0.47522064vw 0;
+}
+.mod_copyright {
+  text-align: center;
+}
+.mod_copyright_links {
+  padding-top: 0.67888663vw;
+}
+.mod_copyright_info {
+  padding: 0.33944331vw 0 0.67888663vw 0;
+  line-height: 1.22199593vw;
+}

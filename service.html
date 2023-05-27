@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手Cool 酷欧 - 服务Service</title>
+    <link rel="stylesheet" href="./lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/service.css">
+    <!-- ico -->
+    <link rel="stylesheet" href="./favicon.ico">
+    <script>
+      window.addEventListener('scroll', function() {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0 )
+      });
+    </script>
+    <!-- 重回顶部 -->
+    <script>
+      document.addEventListener('scroll', function(){
+        var back = document.querySelector('.back');
+        if(window.pageYOffset >= 700){
+          back.style.display = 'block';
+        }else{
+          back.style.display = 'none';
+        }
+        back.addEventListener('click', function(){
+          animate(window, 0);
+        })
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function() {
+                var step = (target - window.pageYOffset) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (window.pageYOffset == target) {
+                    clearInterval(obj.timer);
+                    callback && callback();
+                }
+                window.scroll(0, window.pageYOffset + step);
+            }, 15);
+        }
+      })
+    </script>
+  <script src="./lib/js/jQuery.min.js"></script>
+</head>
+<body>
+  <!-- 顶部导航 开始 -->
+  <div id="headerTop">
+    <header class = "main">
+      <div class="logo l">
+        <a href="./index.html"><p>Cool</p></a>
+      </div>      
+      <div class="ulList">
+        <ul class="upul">
+            <!-- 第一个li 首页-->
+            <li><a href="./index.html">首页</a></li>
+            <!-- 第二个li 手机鼠标浮动显示-->
+            <li  class="jQiphone">
+              <a href="./iphone.html">手机</a>
+              <!-- 手机特别交互效果 -->
+              <div class="outer">
+                <ul>
+                  <li>
+                    <a href="./iphone.html">
+                      <div class="photo">
+                        <div class="fold"><img src="./images/nav/iphone7.png" alt=""></div>
+                      </div>
+                      <div class="titl">XS Fold+ <span class="iconfont icon-new1"></span></div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="./iphone.html">
+                      <div class="photo">
+                        <div class="inbox">
+                          <div class="box front"><img src="./images/nav/iphone2-4.png" alt=""></div>
+                          <div class="box rear"><img src="./images/nav/iphone2-3.png" alt=""></div>
+                        </div>
+                        <div class="box brear"><img src="./images/nav/iphone2-2.png" alt=""></div>
+                        <div class="box trear"><img src="./images/nav/iphone2-1.png" alt=""></div>
+                      </div>
+                      <div class="titl">A17 Pro+ <span class="iconfont icon-new1"></span></div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="./iphone.html">
+                      <div class="photo">
+                        <div class="inbox">
+                          <div class="box front"><img src="./images/nav/iphone3-4.png" alt=""></div>
+                          <div class="box rear"><img src="./images/nav/iphone3-3.png" alt=""></div>
+                        </div>
+                        <div class="box brear"><img src="./images/nav/iphone3-2.png" alt=""></div>
+                        <div class="box trear"><img src="./images/nav/iphone3-1.png" alt=""></div>
+                      </div>
+                      <div class="titl">Aw10 Pro+</div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="./iphone.html">
+                      <div class="photo">
+                        <div class="inbox">
+                          <div class="box front"><img src="./images/nav/iphone5-4.png" alt=""></div>
+                          <div class="box rear"><img src="./images/nav/iphone5-3.png" alt=""></div>
+                        </div>
+                        <div class="box brear"><img src="./images/nav/iphone5-2.png" alt=""></div>
+                        <div class="box trear"><img src="./images/nav/iphone5-1.png" alt=""></div>
+                      </div>
+                      <div class="titl">A16 Pro <span class="iconfont icon-new1"></span></div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="./iphone.html">
+                      <div class="photo">
+                        <div class="fold"><img src="./images/nav/iphone4.png" alt=""></div>
+                      </div>
+                      <div class="titl">XS Fold+ <span class="iconfont icon-new1"></span></div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="./iphone.html">
+                      <div class="photo">
+                        <div class="inbox">
+                          <div class="box front"><img src="./images/nav/iphone1-4.png" alt=""></div>
+                          <div class="box rear"><img src="./images/nav/iphone1-3.png" alt=""></div>
+                        </div>
+                        <div class="box brear"><img src="./images/nav/iphone1-2.png" alt=""></div>
+                        <div class="box trear"><img src="./images/nav/iphone1-1.png" alt=""></div>
+                      </div>
+                      <div class="titl">A14 Pro</div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="./iphone.html">
+                      <div class="photo">
+                        <div class="inbox">
+                          <div class="box front"><img src="./images/nav/iphone8-4.png" alt=""></div>
+                          <div class="box rear"><img src="./images/nav/iphone8-3.png" alt=""></div>
+                        </div>
+                        <div class="box brear"><img src="./images/nav/iphone8-2.png" alt=""></div>
+                        <div class="box trear"><img src="./images/nav/iphone8-1.png" alt=""></div>
+                      </div>
+                      <div class="titl">X14 Pro</div>
+                    </a>
+                  </li>
+                </ul>
+                <!-- 底部文字 -->
+                <div class="down">
+                  <div class="mid">
+                    <!-- 左侧 -->
+                    <div class="ll bor">
+                      <a href="#">
+                        <div class="mal">
+                          <span class="iconfont icon-qita"></span>
+                          <p>全部机型</p>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- 右侧 -->
+                    <div class="ll">
+                      <a href="#">
+                        <div class="mar">
+                          <span class="iconfont icon-line-contrastdropduibidu-di-01"></span>
+                          <p>对比机型</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- 底部文字结束 -->
+              </div>
+              <!-- 手机特别交互效果 结束 -->
+            </li>
+            <!-- 第三个li 穿戴-->
+            <li><a href="./wear.html">穿戴</a>
+              
+            </li>
+            <!-- 第四个li 服务-->
+            <li><a href="./service.html">服务</a></li>
+            <!-- 第五个li APP下载鼠标浮动显示-->
+            <li class="jQcode">
+              <a href="#">APP下载</a>
+              <img src="./upload/qrcode.jpg" alt="" class="code">
+            </li>
+            <!-- 第六个li 输入搜索框-->
+            <li> 
+              <form action="">
+                <input type="text" placeholder="请输入...">
+                <button type="submit"><span class="iconfont icon-sousuo" width="12px"></span></button>
+              </form>
+            </li>
+            <!-- 第七个li 个人中心-->
+            <li><a href="./enroll.html"><span class="iconfont icon-geren"></span></a></li>    <!-- 个人中心iconfont -->
+            <!-- 第八个li 购物商城-->
+            <li><a href="./detail.html"><span class="iconfont icon-shangcheng"></span></a></span></li>    <!-- 购物车iconfont -->
+        </ul>
+      </div> 
+      <!-- 视口宽度小于1100px时显示的效果 开始 -->
+      <!-- 显示的两个图标 开始 -->
+      <div class="lanmu1 share">
+        <a href="./enroll.html"><span class="iconfont icon-geren"></span></a>
+      </div>
+      <div class="lanmu2 share">
+        <a href="#"><span class="iconfont icon-lanmu"></span></a>
+      </div>
+      <!-- 黑色导航栏 开始-->
+      <div class="mulu">
+        <div class="title">
+          <h1>Cool</h1>
+          <div class="icon">
+            <a href="./enroll.html"><span class="iconfont icon-geren fs"></span></a>
+            <a href="#"><span class="iconfont icon-cha cha" ></span></a>
+          </div>
+        </div>
+        <ul>
+          <li><a href="./index.html">首页<span class="iconfont icon-jiantouyou"></span></a></li>
+          <li><a href="./iphone.html">手机<span class="iconfont icon-jiantouyou"></span></a></li>
+          <li><a href="./wear.html">穿戴<span class="iconfont icon-jiantouyou"></span></a></li>
+          <li><a href="./service.html">服务<span class="iconfont icon-jiantouyou"></span></a></li>
+          <li><a href="#">APP下载<span class="iconfont icon-jiantouyou"></span><div class="zp"><img src="./uploads/qrcode.jpg" alt="" class="code-copy"></div></a></li>
+        </ul>
+      </div>
+      <!-- 黑色导航栏结束 -->
+      <!-- 显示的两个图标 结束 -->
+      <!-- 视口宽度小于1100px时显示的效果 结束 -->
+    </header>
+    <script>
+      $(function(){
+        // 导航“手机”的显示与隐藏
+        $(".jQiphone").mouseover(function(){
+          $(this).children(".outer").css('display', 'block');
+        })
+        $(".jQiphone").mouseout(function(){
+          $(this).children(".outer").css('display', 'none');
+        })
+        // 导航“二维码”的显示与隐藏
+        $(".jQcode").hover(function(){
+          $(this).children(".code").stop().slideToggle("fast");
+        })
+        // 宽度小于1100px时的效果
+        $(".lanmu2").click(function(){
+          $(".mulu").css('display', 'block');
+        })
+        $(".cha").click(function(){
+          $(".mulu").css('display', 'none');
+        })
+      })
+      // 文本无法被选中效果
+      var header = document.querySelector('header');
+        header.addEventListener('selectstart', function(e){
+          e.preventDefault();
+        })
+    </script> 
+  </div>
+  <!-- 导航设计结束 -->
+
+  <!-- banner -->
+  <div class="kongbai"></div>
+  <div class="bigbanner">
+    <img src="./images/service/service-bigbanner.png" alt="" width="100%">
+    <div class="title">
+      <h1>欢迎使用Cool服务</span></h1>
+      <p></p>
+      <div class="kuang">
+        <form action="">
+          <input type="text" class="sousuo" placeholder="请输入你的问题...">
+          <button type="submit"><a href="#"><span class="iconfont icon-sousuo"></span></a></button>
+        </form>
+      </div>
+      
+    </div>
+    <div class="mask"></div>
+  </div>
+  <!-- banner结束 -->
+
+  <!-- 主体开始 -->
+  <!-- 图标开始 -->
+  <div class="service">
+    <ul>
+      <li>
+        <a href="#">
+          <span class="iconfont icon-bujifapiao"></span>
+          <h3>寄修服务</h3>
+          <p>足不出户，享受服务</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="iconfont icon-wodeyuyue"></span>
+          <h3>预约服务</h3>
+          <p>一键预约，到店即修</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">        
+          <span class="iconfont icon-fuwu"></span>
+          <h3>自助服务</h3>
+          <p>在线服务，享受自由</p></a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="iconfont icon-dingwei"></span>
+          <h3>查询支付</h3>
+          <p>线上查询，支付单票</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="iconfont icon-zhifu"></span>
+          <h3>真伪查询</h3>
+          <p>辨别真伪，安心使用</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="iconfont icon-anquan"></span>
+          <h3>系统升级</h3>
+          <p>软件更新，畅享新乐趣</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="iconfont icon-shengji"></span>
+          <h3>软件升级</h3>
+          <p>软件更新，畅享新乐趣</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="iconfont icon-shouji"></span>
+          <h3>以旧换新</h3>
+          <p>最高补贴1700元</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="iconfont icon-dianzanaixin"></span>
+          <h3>保障服务</h3>
+          <p>碎屏延保，双重保障</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="iconfont icon-shumaweixiu"></span>
+          <h3>维修查询</h3>
+          <p>寄修预约，全程可视</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- 图标结束 -->
+  <!-- 获取帮助开始 -->
+  <div class="help">
+    <div class="box">
+      <img src="./images/service/service-sm-banner-gethelp.png" alt="">
+      <div class="title">
+        <h1>获取帮助</h1>
+        <p>我们将为您推荐适用的解决方案</p>
+        <a href="#"><div class="start">立即开始</div></a>
+      </div>
+    </div>
+  </div>
+  <!-- 获取帮助结束 -->
+  <!-- 常见问题开始 -->
+  <div class="question">
+    <h1>常见问题</h1>
+    <p>查看故障排除和玩手机小技巧</p>
+    <ul>
+      <li>
+        <p>
+          <a href="#">手机卡顿</a>
+          <a href=""><span class="iconfont icon-jiantouyou"></span></a>
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="#">手机发热</a>
+          <a href=""><span class="iconfont icon-jiantouyou"></span></a>
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="#">手机耗电快</a>
+          <a href=""><span class="iconfont icon-jiantouyou"></span></a>
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="#">手机系统版本升级</a>
+          <a href=""><span class="iconfont icon-jiantouyou"></span></a>
+        </p>  
+      </li>
+      <li>
+        <p>
+          <a href="#">手机备份与资料恢复</a>
+          <a href=""><span class="iconfont icon-jiantouyou"></span></a>
+        </p>
+      </li>
+    </ul>
+  </div>
+  <!-- 常见问题结束 -->
+  <!-- 主体结束 -->
+   
+  <!-- 底部bottom -->
+  <div class="xtx_footer">
+    <div class="front">
+      <ul class="outul">
+        <!-- 1列 -->
+        <li class="outli">
+          <ul >
+            <h1>推荐产品</h1>
+            <li><a href="#">Cool X</a></li>
+            <li><a href="#">Cool S16系列</a></li>
+            <li><a href="#">AW7</a></li>
+            <li><a href="#">XS Fold</a></li>
+            <li><a href="#">Ikun 系列</a></li>
+            <li><a href="#">查看全部手机</a></li>
+            <li><a href="#">查看全部智能硬件</a></li>
+          </ul>
+        </li>
+        <!-- 2列 -->
+        <li class="outli">
+          <ul>
+            <h1>购买渠道</h1>
+            <li><a href="#">下线体验店</a></li>
+            <li><a href="#">COOL商城</a></li>
+            <li><a href="#">订单查询</a></li>
+            <li><a href="#">选购手机</a></li>
+            <li><a href="#">以旧换新</a></li>
+            <li><a href="#">官方授权网店</a></li>
+          </ul>
+        </li>
+        <!-- 3列 -->
+        <li class="outli">
+          <ul>
+            <h1>服务支持</h1>
+            <li><a href="#">体验店</a></li>
+            <li><a href="#">服务首页</a></li>
+            <li><a href="#">真伪查询</a></li>
+            <li><a href="#">服务网点查询</a></li>
+            <li><a href="#">COOL care</a></li>
+            <li><a href="#">COOL 云服务</a></li>
+            <li><a href="#">常见问题</a></li>
+            <li><a href="#">服务政策</a></li>
+            <li><a href="#">环保回收</a></li>
+          </ul>
+        </li>
+        <!-- 4列 -->
+        <li class="outli">
+          <ul>
+            <h1>商务合作</h1>
+            <li><a href="#">企业业务</a></li>
+            <li><a href="#">开放平台</a></li>
+            <li><a href="#">供应商协同平台</a></li>
+            <li><a href="#">采购平台</a></li>
+          </ul>
+        </li>
+        <!-- 5列 -->
+        <li class="outli">
+          <ul>
+            <h1>关于 COOL</h1>
+            <li><a href="#">COOL 简介</a></li>
+            <li><a href="#">新闻中心</a></li>
+            <li><a href="#">最新产品</a></li>
+            <li><a href="#">安全隐私</a></li>
+            <li><a href="#">加入我们</a></li>
+            <li><a href="#">知识产权</a></li>
+            <li><a href="#">廉正合规</a></li>
+            <li><a href="#">可持续发展</a></li>
+            <li><a href="#">COOL 徕卡影像</a></li>
+            <li><a href="#">COOL社区</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="kefu kefu1">
+        <a href="#"><p><span class="iconfont icon-kefu"></span>  在线客服</p></a>
+      </div>
+      <div class="kefu">
+        <p><span class="iconfont icon-dianhua"></span>  全国客户服务热线 7*24小时</p>
+        <p class="rx">400-789-9122</p>
+      </div>
+      <div class="shangbiao">
+        <p><span class="iconfont icon-dingyue-guanzhu-08"></span>关注 Cool</p>
+        <div class="in">
+          <a href="#"><span class="iconfont icon-weibo-copy"></span></a>
+          <a href="#"><span class="iconfont icon-weixin"></span></a>
+          <a href="#"><span class="iconfont icon-zhifubao"></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>©酷欧 2021-2022 版权所有 | 隐私政策 | 用户协议 | 营业执照 </p>
+    </div>
+  </div>
+  <div class="back"><span class="iconfont icon-jiantoushang"></span></div>
+  <script>
+    var back = document.querySelector('.back');
+    back.addEventListener('mouseover', function(){
+      back.style.background = 'rgba(0,0,0,0.45)'
+    });
+    back.addEventListener('mouseout', function(){
+      back.style.background = 'rgba(0,0,0,0.25)'
+    });
+  </script>
+  <!-- 底部bottom结束 -->
+
+</body>
+</html>

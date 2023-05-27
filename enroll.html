@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/enroll.css">
+    <!-- ico -->
+    <link rel="stylesheet" href="./favicon.ico">
+    <title>Cool 酷欧 - 登录账号Enroll</title>
+</head>
+<body>
+    <div class="box">
+        <div class="smbox">
+            <div class="logo">Frozen</div>
+            <div class="title">账号登录</div>
+            <div class="choice">
+                <ul>
+                    <a href="#"><li>短信验证登录</li></a>
+                    <a href="#" class="colr"><li>密码登录</li></a>
+                </ul>
+            </div>
+            <div class="tab_con">
+                <!-- 验证码登录 -->
+                <div class="content" style="display: block;">
+                    <div class="first">
+                        <input type="text" class="iput" placeholder="请输入手机号码">
+                        <div class="second">
+                            <input type="text" disabled="true" placeholder="请输入验证码" class="iput2">
+                            <button type="submit" class="getyzcode" disabled="true">获取验证码</button>
+                        </div>
+                    </div>
+                    <div class="tishi" style="display: none;">请输入11位号码</div>
+                    <script>
+                        var iphnum = document.querySelector('.iput');
+                        var tishi = document.querySelector('.tishi');
+                        var yzcode = document.querySelector('.second').querySelector('input');
+                        var getyzm = document.querySelector('.second').querySelector('.getyzcode');
+                        // 若密码框不及11位，出现提示
+                        iphnum.onblur = function(){
+                            if(iphnum.value.length != 11){
+                                tishi.style.display ='block';
+                                setTimeout(function(){
+                                    tishi.style.display = 'none';
+                                },2000)
+                            }
+                        }
+                        iphnum.onfocus = function(){
+                            getyzm.disabled = false;
+                            yzcode.disabled = false;
+                        }
+                        // 随机生成验证码
+                        var time = 10;
+                        getyzm.addEventListener('click', function(){
+                            var codenum = Math.round(Math.random()*899999+100000)
+                            alert(codenum);
+                            setInterval(function(){
+                                if(time == 0){
+                                    getyzm.disabled = false;
+                                    getyzm.innerHTML = '获取验证码'
+                                }else{
+                                    getyzm.innerHTML = '还剩下' + time + '秒';
+                                    time--;
+                                }
+                            }, 1000)
+                        })
+                    </script>
+                    <a href="#"><div class="submit delu1">登录</div></a>
+                    <div class="else">
+                        <p><a href="#">隐私政策</a></p>
+                        <p><a href="#">注册账号</a></p>
+                    </div>
+                    <div class="success success1" style="display: none;">
+                        <span class="iconfont icon-chenggong">
+                            <span class="qwe">恭喜您登录成功</span></span>
+                        <p class="wenzi">您将在5秒后后跳转至首页</p>
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+                <script>
+                    var iphnum = document.querySelector('.iput');
+                    var tishi = document.querySelector('.tishi');
+                    var yzcode = document.querySelector('.second').querySelector('input');
+                    var getyzm = document.querySelector('.getyzcode');
+                    // 随机生成验证码
+                    var flag = 0;
+                    var delu1 = document.querySelector('.delu1');
+                    yzcode.onmousemove = function(){
+                        if(this.value.length > 0){
+                            flag = 1;
+                            delu1.style.background = '#2ad181';
+                        }
+                    }
+
+                    var success1 = document.querySelector('.success1');
+                    var wenzi = success1.querySelector('.wenzi');
+                    delu1.addEventListener('click', function(){
+                        if(flag == 1){
+                            success1.style.display = 'block';
+                        }
+                        // 倒计时
+                        var timerr = 4;
+                        console.log(timerr);
+                        setInterval(function() {
+                            if(timerr == 0){
+                                location.href = './index.html';
+                            }else{
+                                wenzi.innerHTML = '您将在' + timerr + '秒后跳转至首页';
+                                timerr--;
+                            }
+                        }, 1000);
+                    })   
+                </script>
+                <!-- 密码验证登录 -->
+                <div class="content content2">
+                    <div class="first">
+                        <input type="text" class="iput iphnum2" placeholder="请输入手机号或邮箱">
+                        <label for="">
+                            <img src="./images/enroll/close.png" alt="" id="eye">
+                        </label>
+                        <input type="password" class="iput" placeholder="请输入密码" id="pwd2">
+                    </div>
+                    <div class="secret">
+                        <p><a href="#">忘记密码</a></p>
+                    </div>
+                    <div class="tishi tis2" style="display: none;">请输入11位号码</div>
+                    <a href="#"><div class="submit delu2">登录</div></a>
+                    <div class="else">
+                        <p><a href="#">隐私政策</a></p>
+                        <p><a href="#">注册账号</a></p>
+                    </div>
+                    <div class="success success2" style="display: none;">
+                        <span class="iconfont icon-chenggong"><span class="qwe">恭喜您登录成功</span></span>
+                        <p>您将在5秒后跳转至首页</p>
+                    </div>
+                    <div class="bottom"></div>   
+                    <!-- js-->
+                    <script>
+                        //  密码框的可视与隐藏
+                        var eye = document.getElementById('eye');
+                        var pwd = document.getElementById('pwd2');
+                        var flag = 0;
+                        eye.onclick = function(){
+                            if (flag == 0) {
+                                pwd.type = 'text';
+                                eye.src = 'images/enroll/open.png';
+                                flag = 1;
+                            } else {
+                                pwd.type = 'password';
+                                eye.src = 'images/enroll/close.png';
+                                flag = 0;
+                            }
+                        }
+                        // 密码框的交互
+                        var iphnum2 = document.querySelector('.iphnum2');
+                        var secret2 = document.querySelector('#pwd2');
+                        var tishi2 = document.querySelector('.tis2')
+                        iphnum2.onblur = function(){
+                            if(iphnum2.value.length != 11){
+                                tishi2.style.display ='block';
+                                setTimeout(function(){
+                                    tishi2.style.display = 'none';
+                                },2000)
+                            }else{
+                                return false;
+                            }
+                        }
+                        var flag = 0;
+                        var delu2 = document.querySelector('.delu2');
+                        secret2.onmousemove = function(){
+                            if(this.value.length > 0){
+                                flag = 1;
+                                delu2.style.background = '#2ad181';
+                            }
+                        }
+
+                        var success2 = document.querySelector('.success2');
+                        var jump = success2.querySelector('p');
+                        delu2.addEventListener('click', function() {
+                            if(flag == 1){
+                                success2.style.display = 'block';
+                            }
+                            // 倒计时
+                            var timer = 4;
+                            setInterval(function() {
+                                if(timer == 0){
+                                    location.href = './index.html';
+                                }else{
+                                    jump.innerHTML = '您将在' + timer + '秒后跳转至首页';
+                                    timer--;
+                                }
+                            }, 1000);  
+                        })    
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 密码验证界面和短信验证界面 -->
+    <script>
+        var choice = document.querySelector('.choice');
+        var as = choice.querySelectorAll('a');
+        var contents = document.querySelectorAll('.content');
+        for(var i = 0 ; i < as.length ; i++){
+            as[i].setAttribute('index',i);
+            as[i].onclick = function(){
+                for(var j =0;j < as.length; j++){
+                    as[j].className = 'colr';
+                }
+                this.className = '';
+                var index = this.getAttribute('index');
+                console.log(index);
+                for (var i = 0; i < contents.length; i++) {
+                    contents[i].style.display = 'none';
+                }
+                contents[index].style.display = 'block';
+            }
+        }
+        
+    </script>
+    <script src="./lib/js/jquery.js"></script>
+</body>
+</html>

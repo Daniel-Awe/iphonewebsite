@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的购物车 - Canaan</title>
+    <meta name="description" content="为您提供愉悦的网上购物体验!" />
+    <meta name="Keywords" content="Canaan" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="./lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/shopcart-common.css">
+    <link rel="stylesheet" href="./css/shopcart.css">
+    <script src="./lib/js/jQuery.min.js"></script>
+    <!-- 导航背景 -->
+    <script>
+        window.addEventListener('scroll', function() {
+          var header = document.querySelector("header");
+          header.classList.toggle("sticky", window.scrollY > 0 )
+        });
+    </script>
+    <!-- script -->
+    <script src="./lib/js/jQuery.min.js"></script>
+    <script src="./lib/js/shopcart.js"></script>
+</head>
+
+<body>
+    <!-- 顶部导航 开始 -->
+    <div id="headerTop">
+        <header class = "main">
+        <div class="cool l">
+            <a href="./index.html"><p>Cool</p></a>
+        </div>      
+        <div class="ulList">
+            <ul class="upul">
+                <!-- 第一个li 首页-->
+                <li><a href="./index.html">首页</a></li>
+                <!-- 第二个li 手机鼠标浮动显示-->
+                <li class="jQiphone">
+                    <a href="./iphone.html">手机</a>
+                </li>
+                <!-- 第三个li 穿戴-->
+                <li><a href="./wear.html">穿戴</a>
+                
+                </li>
+                <!-- 第四个li 服务-->
+                <li><a href="./service.html">服务</a></li>
+                <!-- 第五个li APP下载鼠标浮动显示-->
+                <li class="jQcode">
+                    <a href="#">APP下载</a>
+                    <img src="./upload/qrcode.jpg" alt="" class="code">
+                </li>
+                <!-- 第六个li 输入搜索框-->
+                <li> 
+                <form action="">
+                    <input type="text" placeholder="请输入...">
+                    <button type="submit"><span class="iconfont icon-sousuo"></span></button>
+                </form>
+                </li>
+                <!-- 第七个li 个人中心-->
+                <li><a href="./enroll.html"><span class="iconfont icon-geren"></span></a></li>    <!-- 个人中心iconfont -->
+                <!-- 第八个li 购物商城-->
+                <li><a href="./detail.html"><span class="iconfont icon-shangcheng"></span></a></span></li>    <!-- 购物车iconfont -->
+            </ul>
+        </div>  
+        <!-- 视口宽度小于1100px时显示的效果 开始 -->
+        <!-- 显示的两个图标 开始 -->
+        <div class="lanmu1 share">
+            <a href="./enroll.html"><span class="iconfont icon-geren"></span></a>
+        </div>
+        <div class="lanmu2 share">
+            <a href="#"><span class="iconfont icon-lanmu"></span></a>
+        </div>
+        <!-- 黑色导航栏 开始-->
+        <div class="mulu">
+            <div class="title">
+            <h1>Cool</h1>
+            <div class="icon">
+                <a href="./enroll.html"><span class="iconfont icon-geren fs"></span></a>
+                <a href="#"><span class="iconfont icon-cha cha" ></span></a>
+            </div>
+            </div>
+            <ul>
+            <li><a href="./index.html">首页<span class="iconfont icon-jiantouyou"></span></a></li>
+            <li><a href="./iphone.html">手机<span class="iconfont icon-jiantouyou"></span></a></li>
+            <li><a href="./wear.html">穿戴<span class="iconfont icon-jiantouyou"></span></a></li>
+            <li><a href="./service.html">服务<span class="iconfont icon-jiantouyou"></span></a></li>
+            <li><a href="#">APP下载<span class="iconfont icon-jiantouyou"></span><div class="zp"><img src="./uploads/qrcode.jpg" alt="" class="code-copy"></div></a></li>
+            </ul>
+        </div>
+        <!-- 黑色导航栏结束 -->
+        <!-- 显示的两个图标 结束 -->
+        <!-- 视口宽度小于1100px时显示的效果 结束 -->     
+    </header>
+        <script>
+        $(function(){
+            // 导航“手机”的显示与隐藏
+            $(".jQiphone").mouseover(function(){
+            $(this).children(".outer").css('display', 'block');
+            })
+            $(".jQiphone").mouseout(function(){
+            $(this).children(".outer").css('display', 'none');
+            })
+            // 导航“二维码”的显示与隐藏
+            $(".jQcode").hover(function(){
+            $(this).children(".code").stop().slideToggle("fast");
+            })
+            // 宽度小于1100px时的效果
+            $(".lanmu2").click(function(){
+            $(".mulu").css('display', 'block');
+            })
+            $(".cha").click(function(){
+            $(".mulu").css('display', 'none');
+            })
+        })
+        // 文本无法被选中效果
+        var header = document.querySelector('header');
+            header.addEventListener('selectstart', function(e){
+            e.preventDefault();
+            })
+        </script> 
+    </div>
+    <!-- 导航设计结束 -->
+
+    <!-- 主体main -->
+    <div class="c-container">
+        <div class="block"></div>
+        <div class="ex-box">
+            <div class="title">
+                <h1><font style="font-size: 32px; font-weight: 900; color: #e54346; font-family: 幼圆;">Canaan</font> 酷欧商城</h1>
+                <h2>我的购物车</h2>
+            </div>
+        </div>
+        <div class="w">
+            <!-- 购物车主要核心区域 -->
+            <div class="cart-warp">
+                <!-- 头部全选模块 -->
+                <div class="cart-thead">
+                    <div class="t-checkbox">
+                        <input type="checkbox" name="" id="" class="checkall"> 全选
+                    </div>
+                    <div class="t-goods">商品</div>
+                    <div class="t-price">单价</div>
+                    <div class="t-num">数量</div>
+                    <div class="t-sum">小计</div>
+                    <div class="t-action">操作</div>
+                </div>
+                <!-- 商品详细模块 -->
+                <div class="cart-item-list">
+                    <div class="cart-item check-cart-item">
+                        <div class="p-checkbox">
+                            <input type="checkbox" name="" id="" checked class="j-checkbox">
+                        </div>
+                        <div class="p-goods">
+                            <div class="p-img">
+                                <img src="./images/iphone/compare2-1.png" alt="">
+                            </div>
+                            <div class="p-msg">Cool14 Pro+ 512G 翠绿色</div>
+                        </div>
+                        <div class="p-price">￥5999</div>
+                        <div class="p-num">
+                            <div class="quantity-form">
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" class="itxt" value="1">
+                                <a href="javascript:;" class="increment">+</a>
+                            </div>
+                        </div>
+                        <div class="p-sum">￥5999</div>
+                        <div class="p-action"><a href="javascript:;">删除</a></div>
+                    </div>
+                    <div class="cart-item">
+                        <div class="p-checkbox">
+                            <input type="checkbox" name="" id="" class="j-checkbox">
+                        </div>
+                        <div class="p-goods">
+                            <div class="p-img">
+                                <img src="./images/iphone/compare1-1.png" alt="">
+                            </div>
+                            <div class="p-msg">Cool X90 Pro Plus 1T 华夏红</div>
+                        </div>
+                        <div class="p-price">￥8999</div>
+                        <div class="p-num">
+                            <div class="quantity-form">
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" class="itxt" value="1">
+                                <a href="javascript:;" class="increment">+</a>
+                            </div>
+                        </div>
+                        <div class="p-sum">￥8999</div>
+                        <div class="p-action"><a href="javascript:;">删除</a></div>
+                    </div>
+                    <div class="cart-item">
+                        <div class="p-checkbox">
+                            <input type="checkbox" name="" id="" class="j-checkbox">
+                        </div>
+                        <div class="p-goods">
+                            <div class="p-img">
+                                <img src="./images/iphone/compare1-3.png" alt="">
+                            </div>
+                            <div class="p-msg">Cool Ikun50 Pro 512G 冰蓝</div>
+                        </div>
+                        <div class="p-price">￥7599</div>
+                        <div class="p-num">
+                            <div class="quantity-form">
+                                <a href="javascript:;" class="decrement">-</a>
+                                <input type="text" class="itxt" value="1">
+                                <a href="javascript:;" class="increment">+</a>
+                            </div>
+                        </div>
+                        <div class="p-sum">￥7599</div>
+                        <div class="p-action"><a href="javascript:;">删除</a></div>
+                    </div>
+                </div>
+
+                <!-- 结算模块 -->
+                <div class="cart-floatbar">
+                    <div class="select-all">
+                        <input type="checkbox" name="" id="" class="checkall">全选
+                    </div>
+                    <div class="operation">
+                        <a href="javascript:;" class="remove-batch"> 删除选中的商品</a>
+                        <a href="javascript:;" class="clear-all">清理购物车</a>
+                    </div>
+                    <div class="toolbar-right">
+                        <div class="amount-sum">已经选<em>1</em>件商品</div>
+                        <div class="price-sum">总价： <em>￥12.60</em></div>
+                        <div class="btn-area">立即结算</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- footer start -->
+    <div class="footer">
+        <div class="w">
+            <!-- mod_service -->
+            <div class="mod_service">
+                <ul>
+                    <li>
+                        <i class="mod-service-icon mod_service_zheng"></i>
+                        <div class="mod_service_tit">
+                            <h5>正品保障</h5>
+                            <p>正品保障，提供发票</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod-service-icon mod_service_kuai"></i>
+                        <div class="mod_service_tit">
+                            <h5>正品保障</h5>
+                            <p>正品保障，提供发票</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod-service-icon mod_service_bao"></i>
+                        <div class="mod_service_tit">
+                            <h5>正品保障</h5>
+                            <p>正品保障，提供发票</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod-service-icon mod_service_bao"></i>
+                        <div class="mod_service_tit">
+                            <h5>正品保障</h5>
+                            <p>正品保障，提供发票</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="mod-service-icon mod_service_bao"></i>
+                        <div class="mod_service_tit">
+                            <h5>正品保障</h5>
+                            <p>正品保障，提供发票</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- mod_help -->
+            <div class="mod_help">
+                <dl class="mod_help_item">
+                    <dt>购物指南</dt>
+                    <dd> <a href="#">购物流程 </a></dd>
+                    <dd> <a href="#">会员介绍 </a></dd>
+                    <dd> <a href="#">Canaan </a></dd>
+                    <dd> <a href="#">常见问题 </a></dd>
+                    <dd> <a href="#">手机新品 </a></dd>
+                    <dd> <a href="#">联系客服 </a></dd>
+                </dl>
+                <dl class="mod_help_item">
+                    <dt>购物指南</dt>
+                    <dd> <a href="#">购物流程 </a></dd>
+                    <dd> <a href="#">会员介绍 </a></dd>
+                    <dd> <a href="#">Canaan </a></dd>
+                    <dd> <a href="#">常见问题 </a></dd>
+                    <dd> <a href="#">手机新品 </a></dd>
+                    <dd> <a href="#">联系客服 </a></dd>
+                </dl>
+                <dl class="mod_help_item">
+                    <dt>购物指南</dt>
+                    <dd> <a href="#">购物流程 </a></dd>
+                    <dd> <a href="#">会员介绍 </a></dd>
+                    <dd> <a href="#">Canaan </a></dd>
+                    <dd> <a href="#">常见问题 </a></dd>
+                    <dd> <a href="#">手机新品 </a></dd>
+                    <dd> <a href="#">联系客服 </a></dd>
+                </dl>
+                <dl class="mod_help_item">
+                    <dt>购物指南</dt>
+                    <dd> <a href="#">购物流程 </a></dd>
+                    <dd> <a href="#">会员介绍 </a></dd>
+                    <dd> <a href="#">Canaan </a></dd>
+                    <dd> <a href="#">常见问题 </a></dd>
+                    <dd> <a href="#">手机新品 </a></dd>
+                    <dd> <a href="#">联系客服 </a></dd>
+                </dl>
+                <dl class="mod_help_item">
+                    <dt>购物指南</dt>
+                    <dd> <a href="#">购物流程 </a></dd>
+                    <dd> <a href="#">会员介绍 </a></dd>
+                    <dd> <a href="#">Canaan </a></dd>
+                    <dd> <a href="#">常见问题 </a></dd>
+                    <dd> <a href="#">手机新品 </a></dd>
+                    <dd> <a href="#">联系客服 </a></dd>
+                </dl>
+                <dl class="mod_help_item mod_help_app">
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <img src="./upload/qrcode.jpg" alt="">
+                        <p>Canaan客户端</p>
+                    </dd>
+                </dl>
+            </div>
+
+            <!-- mod_copyright  -->
+            <div class="mod_copyright">
+                <p class="mod_copyright_links">
+                    关于我们 | 联系我们 | 联系客服 | 营销中心 | 手机Canaan | 友情链接 | 销售联盟 | Canaan社区 |  English Site | Contact U
+                </p>
+                <p class="mod_copyright_info">
+                    地址：马达加斯加 阿纳拉曼加 伊塔西路372号  电话：400-618-4777 传真：990-82935100 邮箱: madajiasijia.cn <br> 
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- footer end -->
+</body>
+
+</html>

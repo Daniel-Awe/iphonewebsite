@@ -1,0 +1,223 @@
+//out: ../css/enroll.css
+
+// 开头整体定义
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ul{list-style: none;}
+a{text-decoration: none; color: #000;}
+body{
+    width: 100%;
+    background: #f7f7f7;
+}
+// 开头整体定义 结束
+
+// 主体开始
+.box{
+    background: #fff;
+    margin: 70px auto;
+    width: 500px;
+    .smbox{
+        width: 325px;
+        margin: 0 auto;
+        .logo{
+            margin: 10px;
+            padding-top: 60px;
+            text-align: center;
+            font-size: 64px;
+            color: green;
+        }
+        .title{
+            margin: 10px auto;
+            padding-bottom: 25px;
+            text-align: center;
+            font-size: 26px;
+            color: #000;
+        }
+        // 两个选择 开始
+        .choice{
+            margin-bottom: 25px;
+            ul{ 
+                display: flex;
+            }
+            li{
+                width: 162px;
+                text-align: center;
+                font-size: 18px;
+                font-weight: 400;
+                height: 18px;
+                line-height: 18px;
+                a:hover{text-decoration: none;}
+            }
+            .colr{color: #a5a5a5; font-weight: 300;}
+            a:first-child{
+                border-right: 1px solid #d9d9d9;
+            }
+        }
+        // 两个选择 结束
+        .tab_con{
+            position: relative;
+            .content{
+                display: none;
+                position: relative;
+                padding-bottom: 100px;
+                font-size: 13.5px;
+                .first{
+                    position: relative;
+                    .iput{
+                        margin-bottom: 10px;
+                        padding: 0 15px;
+                        height: 50px;
+                        width: 100%;
+                        border-radius: 10px;
+            
+                        outline: none;
+                        border: 0;
+                        background: #f7f7f7;
+                    }
+                    // 眼睛 开始
+                    img{
+                        position: absolute;
+                        width: 30px;
+                        right: 4%;
+                        top: 57%;
+                        background: #f7f7f7;
+                    }
+                    // 眼睛 结束
+                    // 密码登录 界面 开始
+                    .second {
+                        display: flex;
+                        input{
+                            margin-right: 10px;
+                            margin-bottom: 5px;
+                            padding: 0 15px;
+                            height: 50px;
+                            width: 70%;
+                            border-radius: 10px;
+            
+                            outline: none;
+                            border: 0;
+                            background: #f7f7f7;
+                        }
+                        button{
+                            display: block;
+                            background: #3cc382;
+                            width: 30%;
+                            height: 50px;
+                            line-height: 50px;
+                            border-radius: 10px;
+                            text-align: center;
+                            border: 0;
+                            font-size: 13px;
+                            color: #fff;
+                            cursor: pointer;
+                        }
+                    }
+                    // 密码登录 界面 结束
+                }
+                .tishi{
+                    position: absolute;
+                    top: 10%;
+                    left: 27%;
+                    width: 10vw;
+                    height: 2vw;
+                    line-height: 2vw;
+                    padding: 0 0.5vw;
+                    border-radius: 0.5vw;
+                    text-align: center;
+                    color: red;
+                    font-size: 1.0vw;
+                    font-weight: 700;
+                    background-color: rgb(254, 199, 199);
+                    
+                    animation: tishi .5s forwards;
+                } 
+            }
+        }
+        @keyframes tishi {
+            from{transform: scale(0);}
+            to{transform: scale(1.0);}
+        }
+        .secret{
+            line-height: 30px;
+            text-align: center;
+            p{
+                margin-top: 3px;
+                height: 12px;
+                line-height: 12px;
+                text-align: left;
+                font-size: 12px;
+                color: #6d6c6c;
+            }
+        }
+        .submit{
+            margin: 7px 0;
+            margin-top: 35px;
+            width: 100%;
+            height: 3.125rem;
+            border-radius: 0.5vw;
+            background: #c0f1d9;
+            color: #000;
+            font-weight: 600;
+            color: #fff;
+            line-height: 3.125rem;
+            text-align: center;
+        }
+        .else{
+            p:first-child{
+                float: left;
+                margin: 0;
+                font-size: 12px;
+                color: #fff;
+            }
+            p:first-child:hover{
+                color: #a5a5a5;
+            }
+            p:last-child{
+                float: right;
+                margin: 0;
+                font-size: 12px;
+                color: #2ad181;
+            }
+            p:last-child:hover{
+                color: #5dda9d;
+            }
+        }
+    }
+    @keyframes success {
+        from{transform: scale(0);}
+        to{transform: scale(1.0);}
+    }
+    .success{
+        position: absolute;
+        top: 7%;
+        left: -6.5%;
+        width: (350/14.73vw);
+        height: (100/14.73vw);
+        background: rgb(223, 250, 238);
+        border-radius: (12/14.73vw);
+        text-align: center;
+        font-size: (21/14.73vw);
+        animation: success .5s forwards;
+        span{
+            display: inline-block;
+            padding-top: (10/14.73vw);
+            line-height: (45/14.73vw);
+            .qwe{padding-left: (5/14.73vw); color: #000;}
+        }
+        p{line-height: (15/14.73vw); font-size: (14/14.73vw);}
+        .iconfont{
+            font-size: (23/14.73vw);
+            color: #2ad181;
+        }
+    }
+}
+.item{
+    display: none;
+}
+// 主体结束
+
